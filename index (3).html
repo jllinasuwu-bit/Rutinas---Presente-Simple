@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OVA · Daily Routines &amp; Time · English A1</title>
+<meta name="description" content="Objeto Virtual de Aprendizaje: rutinas diarias, la hora, presente simple y preguntas, con la historia de Valentina, líder de turismo en Santa Marta. English A1, programa CREO, Universidad del Magdalena.">
+<style>
+:root{
+  --navy:#10294a; --navy2:#1b3d68; --navy3:#274f82;
+  --gold:#d9a441; --gold2:#b9852c; --cream:#f8f5ee; --paper:#ffffff;
+  --ink:#20293a; --muted:#5b667a;
+  --ok:#1e7f4f; --okbg:#e6f4ec; --bad:#b23a3a; --badbg:#fbeaea;
+  --coral:#e2694f;
+  --radius:14px;
+  --shadow:0 4px 14px rgba(16,41,74,.10);
+  --display:"Bitter","Georgia",serif;
+  --body:"Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:8px 14px;border-radius:0 0 10px 0;z-index:50;font-weight:800}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:6px}
+
+header{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.bar{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:10px 14px}
+.bar .brand{font-family:var(--display);font-weight:700;font-size:.95rem;letter-spacing:.3px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .brand small{display:block;font-family:var(--body);font-weight:600;font-size:.68rem;color:var(--gold);letter-spacing:1.2px;text-transform:uppercase}
+.iconbtn{background:var(--navy3);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:6px 10px;font-size:1rem;cursor:pointer;line-height:1}
+.iconbtn[aria-pressed="true"]{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.progress{height:6px;background:var(--navy2)}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--gold),#f2c979);width:0%;transition:width .4s ease}
+
+main{max-width:880px;margin:0 auto;padding:22px 16px 90px}
+.card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 24px;margin:0 0 18px}
+.eyebrow{display:inline-block;background:var(--navy);color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+h1,h2{font-family:var(--display);color:var(--navy);line-height:1.2;margin:0 0 10px}
+h1{font-size:1.85rem}
+h2{font-size:1.3rem}
+h3{font-family:var(--display);color:var(--navy2);font-size:1.05rem;margin:18px 0 8px}
+p{margin:.5em 0}
+.es{color:var(--muted);font-size:.92em}
+.en{font-weight:700;color:var(--navy)}
+.note{background:#fdf6e7;border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-size:.95em;margin:12px 0}
+.note.hw{background:#eaf3ee;border-left-color:var(--ok)}
+
+.btn{display:inline-block;background:var(--navy);color:#fff;border:none;border-radius:12px;padding:12px 22px;font-family:var(--body);font-weight:800;font-size:1rem;cursor:pointer;box-shadow:var(--shadow)}
+.btn:hover:not(:disabled){background:var(--navy3)}
+.btn:disabled{background:#b9c2d0;cursor:not-allowed;box-shadow:none}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.gold:hover:not(:disabled){background:var(--gold2);color:#fff}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+.navrow{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+
+.opt{display:block;width:100%;text-align:left;background:#f2f4f8;border:2px solid #dfe4ec;border-radius:12px;padding:11px 14px;margin:8px 0;font:inherit;cursor:pointer}
+.opt:hover{border-color:var(--navy3)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt:disabled{cursor:default;opacity:.85}
+
+.fb{border-radius:10px;padding:10px 14px;margin:10px 0;font-weight:700;display:none}
+.fb.ok{display:block;background:var(--okbg);color:var(--ok)}
+.fb.bad{display:block;background:var(--badbg);color:var(--bad)}
+
+.saybtn{background:var(--gold);color:var(--navy);border:none;border-radius:999px;padding:5px 12px;font-weight:800;font-size:.85rem;cursor:pointer}
+.saybtn:hover{background:var(--gold2);color:#fff}
+
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:14px 0}
+.flip{background:#f6f8fb;border:2px solid #e2e7ef;border-radius:12px;padding:14px;text-align:center;font:inherit;cursor:pointer;min-height:120px}
+.flip .emo{font-size:2rem;display:block;margin-bottom:6px}
+.flip.back{background:var(--navy);border-color:var(--gold);color:#fff}
+.flip.back .en{color:var(--gold)}
+.flip.seen{box-shadow:inset 0 0 0 3px var(--okbg)}
+
+.matchcols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mbtn{background:#f2f4f8;border:2px solid #dfe4ec;border-radius:12px;padding:11px 10px;font:inherit;font-weight:700;cursor:pointer;width:100%;margin:0 0 8px}
+.mbtn.sel{border-color:var(--gold);background:#fdf3dd}
+.mbtn.done{border-color:var(--ok);background:var(--okbg);color:var(--ok);cursor:default}
+.mbtn .emo{font-size:1.9rem;display:block}
+
+.clockwrap{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;margin:14px 0}
+.bigtime{font-family:var(--display);font-size:2.4rem;background:#0e2340;color:#ffd98a;padding:10px 26px;border-radius:14px;letter-spacing:2px}
+
+.builder{background:#f6f8fb;border:2px dashed #c8d2e0;border-radius:12px;min-height:56px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--navy);color:#fff;border:none;border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer}
+.chip.inb{background:var(--gold);color:var(--navy)}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+
+.dialog{display:flex;gap:10px;margin:12px 0;align-items:flex-start}
+.dialog .who{font-size:1.7rem;flex:0 0 auto;text-align:center;line-height:1}
+.dialog .who small{display:block;font-size:.6rem;font-weight:800;color:var(--muted)}
+.bubble{background:#eef2f8;border-radius:4px 14px 14px 14px;padding:10px 14px;flex:1}
+.bubble.me{background:#fdf3dd;border-radius:14px 4px 14px 14px}
+
+.formula{background:var(--navy);color:#fff;border-radius:14px;padding:16px;text-align:center;margin:14px 0}
+.formula .piece{display:inline-block;background:var(--navy3);border:2px solid var(--gold);border-radius:10px;padding:8px 14px;margin:4px;font-weight:800}
+.formula .piece.q{background:var(--gold);color:var(--navy)}
+
+.qamap{width:100%;border-collapse:collapse;margin:12px 0}
+.qamap th,.qamap td{border:1px solid #e4e8ef;padding:9px 10px;text-align:left;font-size:.95em}
+.qamap th{background:#f2f6fb;color:var(--navy);font-family:var(--display)}
+
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.colbtn{background:#f2f4f8;border:2px solid #dfe4ec;border-radius:12px;padding:10px 6px;font:inherit;font-weight:800;cursor:pointer;color:var(--navy)}
+.colbtn:hover{border-color:var(--navy3)}
+.colbin{background:#f8fafc;border:1px dashed #cfd8e4;border-radius:10px;min-height:40px;padding:6px;font-size:.8em;margin-top:6px}
+.colbin span{display:block;color:var(--ok);font-weight:700}
+.qcard{background:#fdf3dd;border:2px solid var(--gold);border-radius:12px;padding:14px;text-align:center;font-weight:800;font-size:1.1rem;color:var(--navy);margin:10px 0}
+
+.agenda{width:100%;border-collapse:collapse;margin:12px 0}
+.agenda td,.agenda th{border:1px solid #e4e8ef;padding:10px}
+.agenda th{background:var(--navy);color:var(--gold);font-family:var(--display);text-align:left}
+.agenda .lock{color:var(--muted)}
+.agenda .open{color:var(--ok);font-weight:800}
+
+.wheel{font-size:4.2rem;display:inline-block;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.rounds{display:flex;gap:6px;justify-content:center;margin:8px 0}
+.rounds span{width:16px;height:16px;border-radius:50%;background:#dfe4ec;display:inline-block}
+.rounds span.did{background:var(--gold)}
+
+select{font:inherit;padding:7px 10px;border-radius:9px;border:2px solid #cfd7e3;background:#fff;max-width:100%}
+select.right{border-color:var(--ok);background:var(--okbg)}
+select.wrong{border-color:var(--bad);background:var(--badbg)}
+input[type=text]{font:inherit;padding:10px 12px;border-radius:10px;border:2px solid #cfd7e3;width:100%;max-width:340px}
+
+.rrow{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:start;background:#f6f8fb;border:1px solid #e2e7ef;border-radius:12px;padding:10px;margin:8px 0}
+.rrow .num{font-family:var(--display);font-weight:700;color:var(--gold2);font-size:1.2rem;text-align:center}
+.rrow .ctrl{display:flex;flex-wrap:wrap;gap:6px}
+.rrow .prev{grid-column:1/3;font-weight:700;color:var(--navy);min-height:1.4em}
+.mytext{background:#0e2340;color:#ffe9bd;border-radius:12px;padding:16px;font-size:1.05rem;line-height:1.8;margin:12px 0}
+
+.evalpart{border:1px solid #e4e8ef;border-radius:12px;padding:16px;margin:14px 0}
+.evalpart h3{margin-top:0}
+.eitem{margin:12px 0;padding-bottom:10px;border-bottom:1px dashed #e4e8ef}
+.eitem:last-child{border-bottom:none}
+.itemfb{font-size:.9em;font-weight:700;margin-top:4px;display:none}
+.itemfb.ok{display:block;color:var(--ok)}
+.itemfb.bad{display:block;color:var(--bad)}
+
+.scorebox{text-align:center;padding:20px}
+.scorebox .big{font-family:var(--display);font-size:3.4rem;color:var(--navy);margin:6px 0}
+.badge{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;border-radius:999px;padding:6px 18px;margin-top:6px}
+table.breakdown{width:100%;border-collapse:collapse;margin:14px 0}
+table.breakdown td,table.breakdown th{padding:8px 10px;border-bottom:1px solid #e7ebf1;text-align:left}
+table.breakdown th{color:var(--navy);font-family:var(--display)}
+
+.idcard{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;border-radius:16px;padding:22px;max-width:460px;margin:16px auto;box-shadow:var(--shadow);border:2px solid var(--gold)}
+.idcard .tag{color:var(--gold);font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.idcard h2{color:#fff;margin:4px 0 2px}
+
+footer{max-width:880px;margin:0 auto;padding:0 16px 30px;color:var(--muted);font-size:.8rem;text-align:center}
+@media (max-width:560px){
+  h1{font-size:1.45rem}
+  .bigtime{font-size:1.9rem}
+  .cols3{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip" href="#app">Saltar al contenido</a>
+<header>
+  <div class="bar">
+    <div class="brand">Daily Routines &amp; Time<small>English A1 · Programa CREO · Unimagdalena</small></div>
+    <button class="iconbtn" id="homeBtn" title="Volver al inicio" aria-label="Volver a la pantalla de inicio"><span role="img" aria-label="casa">🏠</span></button>
+    <button class="iconbtn" id="backBtn" title="Pantalla anterior" aria-label="Ir a la pantalla anterior"><span role="img" aria-label="flecha izquierda">◀</span></button>
+    <button class="iconbtn" id="fwdBtn" title="Pantalla siguiente" aria-label="Ir a la pantalla siguiente (solo pantallas ya visitadas)"><span role="img" aria-label="flecha derecha">▶</span></button>
+    <button class="iconbtn" id="slowBtn" aria-pressed="false" title="Audio lento" aria-label="Activar o desactivar audio lento"><span role="img" aria-label="tortuga">🐢</span></button>
+    <button class="iconbtn" id="muteBtn" aria-pressed="false" title="Silenciar sonidos" aria-label="Silenciar o activar sonidos"><span role="img" aria-label="altavoz" id="muteIco">🔊</span></button>
+  </div>
+  <div class="progress" aria-hidden="true"><div id="pbar"></div></div>
+</header>
+<main id="app" aria-live="polite"></main>
+<footer>OVA elaborado por Juan S. Llinás · Universidad del Magdalena · Licencia CC BY-NC-SA 4.0<br>Tu progreso se guarda en este navegador. Tu evidencia de nota es la imagen PNG que descargas al final.</footer>
+
+<script>
+"use strict";
+/* ================= STATE ================= */
+const KEY="ova_rutinas_v2";
+let S={name:"",screen:0,maxScreen:0,steps:{},evalDone:false,evalScore:0,evalParts:[0,0,0,0,0],routine:[],slow:false,mute:false};
+try{const raw=localStorage.getItem(KEY);if(raw){S=Object.assign(S,JSON.parse(raw));}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function done(k){S.steps[k]=true;save();}
+function isDone(k){return !!S.steps[k];}
+
+/* ================= AUDIO ================= */
+let AC=null;
+function actx(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}}return AC;}
+function tone(f,t,dur,type){const a=actx();if(!a||S.mute)return;const o=a.createOscillator(),g=a.createGain();o.type=type||"sine";o.frequency.value=f;g.gain.setValueAtTime(.16,a.currentTime+t);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+t+dur);o.connect(g).connect(a.destination);o.start(a.currentTime+t);o.stop(a.currentTime+t+dur);}
+function sOK(){tone(660,0,.12);tone(880,.12,.18);}
+function sBAD(){tone(220,0,.22,"square");}
+function sWIN(){[523,659,784,1046].forEach((f,i)=>tone(f,i*.13,.22));}
+/* Voces: v = Valentina (aguda), d = Daniel (grave), n = neutra */
+function speak(txt,who){
+  if(S.mute)return;
+  try{
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(txt);
+    u.lang="en-US";u.rate=S.slow?0.6:0.92;
+    u.pitch=who==="v"?1.3:who==="d"?0.75:1;
+    const v=window.speechSynthesis.getVoices().find(x=>x.lang&&x.lang.startsWith("en"));
+    if(v)u.voice=v;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+/* ================= HELPERS ================= */
+const app=document.getElementById("app");
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function say(t,who,label){return `<button class="saybtn" data-say="${esc(t)}" data-who="${who||"n"}" aria-label="Escuchar en inglés"><span role="img" aria-label="audio">🔊</span> ${label||"Escuchar"}</button>`;}
+function bindSay(root){root.querySelectorAll("[data-say]").forEach(b=>b.addEventListener("click",()=>speak(b.dataset.say,b.dataset.who)));}
+function fb(el,ok,msgOK,msgBad){el.className="fb "+(ok?"ok":"bad");el.textContent=ok?(msgOK||"¡Correcto! Well done."):(msgBad||"Todavía no. Revisa e intenta de nuevo.");}
+function gate(btnId,cond){const b=document.getElementById(btnId);if(b)b.disabled=!cond;}
+function goto(n){S.screen=Math.max(0,Math.min(SCREENS.length-1,n));S.maxScreen=Math.max(S.maxScreen||0,S.screen);save();render();window.scrollTo(0,0);}
+function navRow(prevOk,nextLabel){
+  return `<div class="navrow">
+    <button class="btn ghost" id="prevBtn" ${prevOk?"":"style='visibility:hidden'"}>&larr; Atrás</button>
+    <button class="btn gold" id="nextBtn" disabled>${nextLabel||"Continuar"} &rarr;</button>
+  </div>`;
+}
+function bindNav(){
+  const p=document.getElementById("prevBtn"),n=document.getElementById("nextBtn");
+  if(p)p.addEventListener("click",()=>goto(S.screen-1));
+  if(n)n.addEventListener("click",()=>goto(S.screen+1));
+}
+function bubble(who,html,audioTxt){
+  const w=who==="v"?`<span role="img" aria-label="mujer líder de turismo">👩🏽‍✈️</span><small>Valentina</small>`
+        :who==="d"?`<span role="img" aria-label="hombre guía nuevo">🧑🏽‍🦱</span><small>Daniel</small>`
+        :who==="t"?`<span role="img" aria-label="turista">🧳</span><small>Turista</small>`
+        :`<span role="img" aria-label="tú">🙋</span><small>Tú</small>`;
+  return `<div class="dialog"><span class="who">${w}</span>
+    <div class="bubble ${who==="u"?"me":""}">${html}${audioTxt?" "+say(audioTxt,who==="t"?"n":who):""}</div></div>`;
+}
+
+/* Motor genérico: serie de opción múltiple */
+function mcDrill(cfg){
+  let idx=isDone(cfg.key)?cfg.items.length:0;
+  function draw(){
+    if(idx>=cfg.items.length){
+      app.innerHTML=`<div class="card"><span class="eyebrow">${cfg.eyebrow}</span>
+      <h1>${cfg.doneTitle}</h1>
+      <div class="fb ok" style="display:block">${cfg.doneMsg}</div>
+      ${cfg.doneExtra||""}
+      ${navRow(true,cfg.nextLabel)}</div>`;
+      bindSay(app);bindNav();gate("nextBtn",true);
+      if(cfg.nextOverride){
+        const n=document.getElementById("nextBtn");
+        const c=n.cloneNode(true);c.disabled=false;
+        n.parentNode.replaceChild(c,n);
+        c.addEventListener("click",cfg.nextOverride);
+      }
+      return;
+    }
+    const it=cfg.items[idx];
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">${cfg.eyebrow} · ${idx+1} de ${cfg.items.length}</span>
+      <h1>${cfg.title}</h1>
+      ${cfg.intro||""}
+      ${it.pre||""}
+      ${it.stem?`<p style="font-size:1.25rem"><span class="en">${it.stem}</span></p>`:""}
+      ${shuffle(it.opts.map((o,i)=>({o,i}))).map(x=>`<button class="opt" data-i="${x.i}">${esc(x.o)}</button>`).join("")}
+      <div class="fb" id="dfb" aria-live="polite"></div>
+      <div class="navrow"><button class="btn ghost" id="prevBtn">&larr; Atrás</button>
+      <button class="btn gold" id="contBtn" disabled>Siguiente &rarr;</button></div>
+    </div>`;
+    bindSay(app);
+    document.getElementById("prevBtn").addEventListener("click",()=>goto(S.screen-1));
+    const f=document.getElementById("dfb");
+    app.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{
+      if(Number(b.dataset.i)===it.ok){
+        app.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+        b.classList.add("right");sOK();
+        if(it.sayOK)speak(it.sayOK,it.who||"n");
+        fb(f,true,"¡Correcto! "+(it.why||""));
+        document.getElementById("contBtn").disabled=false;
+      }else{b.classList.add("wrong");b.disabled=true;sBAD();fb(f,false,"",it.wrongMsg||"Intenta otra opción.");}
+    }));
+    document.getElementById("contBtn").addEventListener("click",()=>{idx++;if(idx>=cfg.items.length)done(cfg.key);draw();window.scrollTo(0,0);});
+  }
+  draw();
+}
+
+/* Motor genérico: matching táctil de parejas */
+function matchDrill(cfg){
+  const left=shuffle(cfg.pairs.map(p=>p.l));
+  const right=shuffle(cfg.pairs.map(p=>p.r));
+  let selL=null,selR=null,matched=0;
+  app.innerHTML=`
+  <div class="card">
+    <span class="eyebrow">${cfg.eyebrow}</span>
+    <h1>${cfg.title}</h1>
+    <p class="es">${cfg.desc}</p>
+    <div class="matchcols">
+      <div>${left.map((t,i)=>`<button class="mbtn" data-side="L" data-val="${esc(t.v)}">${t.html}</button>`).join("")}</div>
+      <div>${right.map((t,i)=>`<button class="mbtn" data-side="R" data-val="${esc(t.v)}">${t.html}</button>`).join("")}</div>
+    </div>
+    <div class="fb" id="mfb" aria-live="polite"></div>
+    ${navRow(true,cfg.nextLabel)}
+  </div>`;
+  bindNav();
+  if(isDone(cfg.key))gate("nextBtn",true);
+  const f=document.getElementById("mfb");
+  app.querySelectorAll(".mbtn").forEach(b=>b.addEventListener("click",()=>{
+    if(b.classList.contains("done"))return;
+    if(b.dataset.side==="L"){if(selL)selL.classList.remove("sel");selL=b;b.classList.add("sel");}
+    else{if(selR)selR.classList.remove("sel");selR=b;b.classList.add("sel");}
+    if(selL&&selR){
+      const okPair=cfg.pairs.some(p=>p.l.v===selL.dataset.val&&p.r.v===selR.dataset.val);
+      if(okPair){
+        selL.classList.remove("sel");selR.classList.remove("sel");
+        selL.classList.add("done");selR.classList.add("done");
+        if(cfg.sayPair)speak(cfg.sayPair(selL.dataset.val,selR.dataset.val));
+        sOK();matched++;
+        if(matched===cfg.pairs.length){fb(f,true,cfg.doneMsg);done(cfg.key);gate("nextBtn",true);}
+      }else{
+        sBAD();fb(f,false,"","Esa pareja no coincide. Intenta otra combinación.");
+        selL.classList.remove("sel");selR.classList.remove("sel");selL=null;selR=null;return;
+      }
+      selL=null;selR=null;
+    }
+  }));
+}
+
+/* ================= DATA ================= */
+const VOCAB=[
+ {en:"wake up",es:"despertarse",emo:"⏰",lab:"reloj despertador",me:"I wake up"},
+ {en:"get up",es:"levantarse",emo:"🛏️",lab:"cama",me:"I get up"},
+ {en:"take a shower",es:"ducharse",emo:"🚿",lab:"ducha",me:"I take a shower"},
+ {en:"get dressed",es:"vestirse",emo:"👕",lab:"camiseta",me:"I get dressed"},
+ {en:"have breakfast",es:"desayunar",emo:"☕",lab:"taza de café",me:"I have breakfast"},
+ {en:"go to work",es:"ir al trabajo",emo:"🚌",lab:"bus",me:"I go to work"},
+ {en:"start work",es:"empezar a trabajar",emo:"🛎️",lab:"campana de recepción",me:"I start work"},
+ {en:"have lunch",es:"almorzar",emo:"🍽️",lab:"plato con cubiertos",me:"I have lunch"},
+ {en:"finish work",es:"terminar el trabajo",emo:"🕔",lab:"reloj de las cinco",me:"I finish work"},
+ {en:"go home",es:"volver a casa",emo:"🏠",lab:"casa",me:"I go home"},
+ {en:"have dinner",es:"cenar",emo:"🍲",lab:"plato de comida",me:"I have dinner"},
+ {en:"go to bed",es:"acostarse",emo:"🌙",lab:"luna",me:"I go to bed"}
+];
+
+function clockSVG(h,m){
+  const cx=70,cy=70,r=64;
+  const ah=((h%12)+m/60)*30-90, am=m*6-90;
+  const rad=d=>d*Math.PI/180;
+  const hx=cx+34*Math.cos(rad(ah)),hy=cy+34*Math.sin(rad(ah));
+  const mx=cx+50*Math.cos(rad(am)),my=cy+50*Math.sin(rad(am));
+  let marks="";
+  for(let i=0;i<12;i++){const a=rad(i*30-90);marks+=`<circle cx="${cx+56*Math.cos(a)}" cy="${cy+56*Math.sin(a)}" r="2.4" fill="#d9a441"/>`;}
+  return `<svg viewBox="0 0 140 140" width="140" height="140" role="img" aria-label="Reloj marcando las ${h} y ${m} minutos">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="#10294a" stroke="#d9a441" stroke-width="4"/>${marks}
+    <line x1="${cx}" y1="${cy}" x2="${hx}" y2="${hy}" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <line x1="${cx}" y1="${cy}" x2="${mx}" y2="${my}" stroke="#f2c979" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="${cx}" cy="${cy}" r="5" fill="#d9a441"/>
+  </svg>`;
+}
+
+/* ================= SCREENS ================= */
+/* 0 · Portada */
+function s0(){
+  app.innerHTML=`
+  <div class="card">
+    <span class="eyebrow">Bienvenida</span>
+    <h1>Daily Routines &amp; Telling the Time</h1>
+    <p class="es">Rutinas diarias, la hora y, sobre todo, <strong>cómo hacer y responder preguntas</strong> en presente simple.</p>
+    <div class="idcard">
+      <span class="tag">Agencia Caribe Vivo · Santa Marta</span>
+      <h2><span role="img" aria-label="mujer líder de turismo">👩🏽‍✈️</span> Valentina Mendoza</h2>
+      <p style="margin:2px 0">Tour Leader · Líder de turismo</p>
+      <p class="es" style="color:#ffd98a">Valentina organiza los tours al Tayrona, Taganga y el Centro Histórico. Hoy llega Daniel, un guía nuevo, y ella necesita hacerle muchas preguntas para armar los horarios de la temporada alta. Tú vas a aprender con ellos.</p>
+    </div>
+    <h3>En esta historia vas a aprender a:</h3>
+    <p>1. Nombrar las <strong>rutinas diarias</strong> en inglés.<br>
+    2. Decir y entender <strong>la hora</strong>.<br>
+    3. Usar el <strong>presente simple</strong> en afirmativo y negativo.<br>
+    4. <strong>Hacer preguntas y responderlas</strong>: <span class="en">Do you…? What time do you…? When do you…?</span></p>
+    <div class="note hw"><span role="img" aria-label="cuaderno">📝</span> <strong>Tarea final:</strong> al terminar el OVA vas a construir <strong>tus 8 oraciones sobre tu propia rutina</strong>. Debes llevarlas <strong>escritas a mano y practicadas en voz alta</strong> a la próxima clase.</div>
+    <label for="nameInp"><strong>Escribe tu nombre completo para comenzar:</strong></label><br>
+    <input type="text" id="nameInp" autocomplete="name" placeholder="Nombre y apellido" value="${esc(S.name)}" style="margin:10px 0">
+    <div class="navrow"><span></span><button class="btn gold" id="startBtn" disabled>Comenzar la historia &rarr;</button></div>
+  </div>`;
+  const inp=document.getElementById("nameInp");
+  const check=()=>gate("startBtn",inp.value.trim().length>=3);
+  inp.addEventListener("input",check);check();
+  document.getElementById("startBtn").addEventListener("click",()=>{S.name=inp.value.trim();save();goto(1);});
+}
+
+/* 1 · Historia 1 + flip cards de vocabulario */
+function s1(){
+  let flipped=isDone("v1")?VOCAB.map((_,i)=>i):[];
+  function draw(){
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 1 · La rutina de Valentina</span>
+      <h1>Un día en Caribe Vivo</h1>
+      ${bubble("v",`<span class="en">Hi! I'm Valentina, a tour leader in Santa Marta. My days start early! I <strong>wake up</strong> at 4:30 a.m., I <strong>take a shower</strong>, I <strong>have breakfast</strong> and I <strong>go to work</strong>. I <strong>start work</strong> at 6:00 because the Tayrona tours leave early. I <strong>have lunch</strong> at 12:30, I <strong>finish work</strong> at 5:00 p.m., I <strong>go home</strong>, I <strong>have dinner</strong> and I <strong>go to bed</strong> at 9:30.</span>`,
+      "Hi! I'm Valentina, a tour leader in Santa Marta. My days start early! I wake up at four thirty a m. I take a shower, I have breakfast and I go to work. I start work at six, because the Tayrona tours leave early. I have lunch at twelve thirty. I finish work at five p m. I go home, I have dinner, and I go to bed at nine thirty.")}
+      <h3>Toca cada tarjeta para descubrir su significado <span class="es">(voltea las 12)</span></h3>
+      <div class="vgrid">
+      ${VOCAB.map((v,i)=>{
+        const isBack=flipped.includes(i);
+        return `<button class="flip ${isBack?"back seen":""}" data-i="${i}" aria-label="Tarjeta: ${esc(v.en)}. Toca para ${isBack?"ver el inglés":"ver el significado"}">
+          ${isBack?`<span class="emo" role="img" aria-label="${esc(v.lab)}">${v.emo}</span><div>${esc(v.es)}</div><div class="en" style="font-size:.85em">${esc(v.en)}</div>`
+                  :`<span class="emo" role="img" aria-label="${esc(v.lab)}">${v.emo}</span><div class="en">${esc(v.en)}</div><div class="es">¿Qué significa?</div>`}
+        </button>`;
+      }).join("")}
+      </div>
+      <p class="es" id="flipCount">${flipped.length} de 12 tarjetas descubiertas.</p>
+      ${navRow(true,"Ir a la práctica")}
+    </div>`;
+    bindSay(app);bindNav();
+    gate("nextBtn",flipped.length>=12);
+    app.querySelectorAll(".flip").forEach(b=>b.addEventListener("click",()=>{
+      const i=Number(b.dataset.i);
+      if(!flipped.includes(i)){flipped.push(i);speak(VOCAB[i].en);if(flipped.length>=12)done("v1");}
+      else{speak(VOCAB[i].en);}
+      draw();
+    }));
+  }
+  draw();
+}
+
+/* 2 · Matching con imágenes */
+function s2(){
+  const six=VOCAB.slice(0,12).filter((_,i)=>[0,2,4,6,7,11].includes(i));
+  matchDrill({
+    key:"v2",eyebrow:"Capítulo 1 · Práctica",title:"Conecta la imagen con la rutina",
+    desc:"Toca una imagen y luego la rutina en inglés que le corresponde. Forma las 6 parejas.",
+    pairs:six.map(v=>({l:{v:v.en,html:`<span class="emo" role="img" aria-label="${esc(v.lab)}">${v.emo}</span><span class="es">${esc(v.es)}</span>`},r:{v:v.en,html:esc(v.en)}})),
+    sayPair:(a)=>a,
+    doneMsg:"¡Excelente! Completaste las 6 parejas.",
+    nextLabel:"Ir a la hora"
+  });
+}
+
+/* 3 · La hora: presentación dosificada */
+function s3(){
+  let step=isDone("t1")?2:0;
+  const parts=[
+   `<h3>1. La hora en punto <span class="es">(o'clock)</span></h3>
+    ${bubble("v",`<span class="en">The Tayrona tour leaves at six o'clock!</span>`,"The Tayrona tour leaves at six o'clock!")}
+    <div class="clockwrap">${clockSVG(6,0)}<div><div class="bigtime">6:00</div>
+    <p class="en">It's six o'clock. ${say("It's six o'clock.")}</p>
+    <p class="es">Usamos <span class="en">It's</span> + número + <span class="en">o'clock</span> cuando los minutos son 00.</p></div></div>`,
+   `<h3>2. Hora con minutos <span class="es">(lectura digital)</span></h3>
+    <div class="clockwrap">${clockSVG(4,30)}<div><div class="bigtime">4:30</div>
+    <p class="en">It's four thirty. ${say("It's four thirty.")}</p></div></div>
+    <div class="clockwrap">${clockSVG(12,15)}<div><div class="bigtime">12:15</div>
+    <p class="en">It's twelve fifteen. ${say("It's twelve fifteen.")}</p></div></div>
+    <p class="es">Lee la hora y luego los minutos: número + número. Es la forma más fácil y siempre es correcta.</p>
+    <div class="note">También vas a escuchar <span class="en">half past four</span> (4:30) y <span class="en">a quarter past twelve</span> (12:15). Por ahora, la lectura digital es suficiente.</div>`,
+   `<h3>3. a.m., p.m. y la preposición <span class="en">at</span></h3>
+    <p><span class="en">a.m.</span> <span class="es">= de la mañana (00:00 a 11:59)</span> · <span class="en">p.m.</span> <span class="es">= de la tarde y de la noche (12:00 a 23:59)</span></p>
+    <p class="en">Valentina wakes up <strong>at</strong> 4:30 a.m. ${say("Valentina wakes up at four thirty a m.")}</p>
+    <p class="en">She finishes work <strong>at</strong> 5:00 p.m. ${say("She finishes work at five p m.")}</p>
+    <p class="es">Para decir a qué hora pasa algo, usamos <span class="en">at</span> + la hora. También: <span class="en">in the morning, in the afternoon, in the evening, at night</span>.</p>`
+  ];
+  function draw(){
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 2 · La hora</span>
+      <h1>What time is it? <span class="es">(¿Qué hora es?)</span></h1>
+      ${parts.slice(0,step+1).join("")}
+      ${step<2?`<button class="btn" id="moreBtn">Siguiente idea (${step+1}/3)</button>`:""}
+      ${navRow(true,"Ir a la práctica")}
+    </div>`;
+    bindSay(app);bindNav();
+    gate("nextBtn",step>=2);
+    const mb=document.getElementById("moreBtn");
+    if(mb)mb.addEventListener("click",()=>{step++;if(step>=2)done("t1");draw();});
+    if(step>=2)done("t1");
+  }
+  draw();
+}
+
+/* 4 · La hora: práctica MC */
+function s4(){
+  mcDrill({
+    key:"t2",eyebrow:"Capítulo 2 · Práctica",title:"Elige la hora correcta",
+    items:[
+     {pre:`<div class="clockwrap">${clockSVG(9,0)}<div class="bigtime">9:00</div></div>`,opts:["It's nine o'clock.","It's nine thirty.","It's six o'clock."],ok:0,sayOK:"It's nine o'clock.",why:"Minutos en 00: It's + número + o'clock."},
+     {pre:`<div class="clockwrap">${clockSVG(5,30)}<div class="bigtime">5:30</div></div>`,opts:["It's five fifteen.","It's five thirty.","It's six thirty."],ok:1,sayOK:"It's five thirty.",why:"Primero la hora (five), luego los minutos (thirty)."},
+     {pre:`<div class="clockwrap">${clockSVG(11,15)}<div class="bigtime">11:15</div></div>`,opts:["It's eleven fifty.","It's ten fifteen.","It's eleven fifteen."],ok:2,sayOK:"It's eleven fifteen.",why:"fifteen = 15, fifty = 50. ¡Escucha la diferencia!"},
+     {pre:`<div class="clockwrap">${clockSVG(7,45)}<div class="bigtime">7:45</div></div>`,opts:["It's seven forty-five.","It's seven fifteen.","It's four seventy-five."],ok:0,sayOK:"It's seven forty-five.",why:"forty-five = 45."},
+     {pre:`<div class="clockwrap"><div class="bigtime">1:00 p.m.</div></div>`,opts:["It's one o'clock in the morning.","It's one o'clock in the afternoon.","It's ten o'clock at night."],ok:1,sayOK:"It's one o'clock in the afternoon.",why:"p.m. = tarde o noche. La 1:00 p.m. es de la tarde."}
+    ],
+    doneTitle:"¡Práctica de la hora completa!",doneMsg:"Muy bien. Ya puedes leer la hora en inglés.",nextLabel:"Ir a la gramática"
+  });
+}
+
+/* 5 · Afirmativo inductivo */
+function s5(){
+  const qs=[
+   {q:"Cuando Valentina habla de sí misma (I), el verbo…",opts:["no cambia: wake, start, finish","termina en -s: wakes, starts","termina en -ing"],ok:0,why:"Con I, you, we y they el verbo va en su forma base."},
+   {q:"Cuando Valentina habla de Daniel (he), el verbo…",opts:["no cambia","termina en -s o -es: wakes, goes, finishes","va después de will"],ok:1,why:"Con he, she e it el verbo lleva -s (o -es)."},
+   {q:"Observa: go → goes, finish → finishes, watch → watches. ¿Cuándo agregamos -es?",opts:["Cuando el verbo termina en o, sh o ch","Cuando el verbo es corto","Siempre"],ok:0,why:"Después de o, sh, ch, x y ss escribimos -es."}
+  ];
+  let qi=isDone("g1")?qs.length:0;
+  function draw(){
+    let qblock="";
+    if(qi<qs.length){
+      const q=qs[qi];
+      qblock=`<h3>Observa y descubre · Pregunta ${qi+1} de ${qs.length}</h3>
+      <p><strong>${esc(q.q)}</strong></p>
+      ${q.opts.map((o,i)=>`<button class="opt" data-i="${i}">${esc(o)}</button>`).join("")}
+      <div class="fb" id="gfb" aria-live="polite"></div>`;
+    }else{
+      qblock=`<div class="fb ok" style="display:block">¡Descubriste la regla!</div>
+      <div class="note"><strong>Presente simple afirmativo</strong><br>
+      <span class="en">I / You / We / They</span> + verbo base: <span class="en">I wake up at 4:30.</span><br>
+      <span class="en">He / She / It</span> + verbo + <strong>-s</strong>: <span class="en">He wakes up at 7:00.</span><br>
+      Ortografía: <span class="en">go &rarr; goes · finish &rarr; finishes · watch &rarr; watches · study &rarr; studies</span></div>`;
+    }
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 3 · Gramática</span>
+      <h1>Llega Daniel, el guía nuevo</h1>
+      <p class="es">Valentina le presenta el equipo a Daniel. Lee y escucha. Fíjate en los verbos resaltados.</p>
+      ${bubble("v",`<span class="en">I <strong>wake up</strong> at 4:30 and I <strong>start</strong> work at 6:00. I <strong>finish</strong> at 5:00 p.m.</span>`,
+      "I wake up at four thirty, and I start work at six. I finish at five p m.")}
+      ${bubble("v",`<span class="en">Daniel is our new guide. He <strong>wakes up</strong> at 7:00. He <strong>goes</strong> to the office at 8:30 and he <strong>finishes</strong> work at 6:00 p.m. He <strong>watches</strong> the sunset at Taganga every day!</span>`,
+      "Daniel is our new guide. He wakes up at seven. He goes to the office at eight thirty, and he finishes work at six p m. He watches the sunset at Taganga every day!")}
+      ${qblock}
+      ${navRow(true,"Practicar el afirmativo")}
+    </div>`;
+    bindSay(app);bindNav();gate("nextBtn",qi>=qs.length);
+    if(qi<qs.length){
+      const q=qs[qi],f=document.getElementById("gfb");
+      app.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{
+        if(Number(b.dataset.i)===q.ok){
+          app.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+          b.classList.add("right");sOK();fb(f,true,"¡Eso es! "+q.why);
+          setTimeout(()=>{qi++;if(qi>=qs.length)done("g1");draw();},1400);
+        }else{b.classList.add("wrong");b.disabled=true;sBAD();fb(f,false,"","Vuelve a leer los textos y prueba otra opción.");}
+      }));
+    }
+  }
+  draw();
+}
+
+/* 6 · Práctica afirmativo */
+function s6(){
+  mcDrill({
+    key:"g2",eyebrow:"Capítulo 3 · Práctica",title:"Completa la oración",
+    items:[
+     {stem:"Valentina ______ up at 4:30 a.m. (wake)",opts:["wake","wakes","waking"],ok:1,why:"Valentina = she, entonces el verbo lleva -s."},
+     {stem:"I ______ breakfast at 6:00. (have)",opts:["have","has","haves"],ok:0,why:"Con I usamos la forma base: have."},
+     {stem:"Daniel ______ to the office at 8:30. (go)",opts:["go","gos","goes"],ok:2,why:"go termina en o, entonces agregamos -es: goes."},
+     {stem:"We ______ work at 5:00 p.m. (finish)",opts:["finish","finishes","finishs"],ok:0,why:"Con we usamos la forma base: finish."},
+     {stem:"He ______ the sunset at Taganga. (watch)",opts:["watchs","watches","watch"],ok:1,why:"watch termina en ch, entonces agregamos -es: watches."},
+     {stem:"The tourists ______ to bed at 10:00. (go)",opts:["goes","going","go"],ok:2,why:"The tourists = they: forma base, go."}
+    ],
+    doneTitle:"¡Afirmativo dominado!",doneMsg:"Excelente. Recuerda: he, she, it &rarr; verbo con -s.",nextLabel:"Ir al negativo"
+  });
+}
+
+/* 7 · Negativo: contraste + selección + escritura */
+function s7(){
+  const items=[
+   {pre:`<p class="es">Transforma al negativo:</p><p style="font-size:1.2rem"><span class="en">I work on Sundays.</span></p>`,opts:["I don't work on Sundays.","I doesn't work on Sundays.","I not work on Sundays."],ok:0,sayOK:"I don't work on Sundays.",why:"Con I: don't + verbo base."},
+   {pre:`<p class="es">Transforma al negativo:</p><p style="font-size:1.2rem"><span class="en">Valentina works at night.</span></p>`,opts:["Valentina don't works at night.","Valentina doesn't work at night.","Valentina doesn't works at night."],ok:1,sayOK:"Valentina doesn't work at night.",why:"She → doesn't, y el verbo pierde la -s."},
+   {pre:`<p class="es">Transforma al negativo:</p><p style="font-size:1.2rem"><span class="en">Daniel gets up early on Saturdays.</span></p>`,opts:["Daniel doesn't gets up early on Saturdays.","Daniel don't get up early on Saturdays.","Daniel doesn't get up early on Saturdays."],ok:2,sayOK:"Daniel doesn't get up early on Saturdays.",why:"doesn't + forma base: get, sin -s."}
+  ];
+  const writeItems=[
+   {aff:"We have lunch at the office.",say:"We don't have lunch at the office.",ok:["we dont have lunch at the office","we do not have lunch at the office"],hint:"we → don't + verbo base"},
+   {aff:"She watches TV in the morning.",say:"She doesn't watch TV in the morning.",ok:["she doesnt watch tv in the morning","she does not watch tv in the morning"],hint:"she → doesn't, y el verbo pierde la -s"},
+   {aff:"I get up early on Sundays.",say:"I don't get up early on Sundays.",ok:["i dont get up early on sundays","i do not get up early on sundays"],hint:"I → don't + verbo base"}
+  ];
+  const norm=t=>t.toLowerCase().replace(/['’.!]/g,"").replace(/\s+/g," ").trim();
+  function writePhase(){
+    let wi=isDone("n3")?writeItems.length:0;
+    function wdraw(){
+      if(wi>=writeItems.length){
+        app.innerHTML=`<div class="card"><span class="eyebrow">Capítulo 4 · Escritura</span>
+        <h1>¡Negativo completado!</h1>
+        <div class="fb ok" style="display:block">Seleccionaste y también escribiste tus propias oraciones negativas. don't / doesn't + verbo base.</div>
+        ${navRow(true,"Llegó la hora de las preguntas")}</div>`;
+        bindNav();gate("nextBtn",true);return;
+      }
+      const it=writeItems[wi];
+      app.innerHTML=`
+      <div class="card">
+        <span class="eyebrow">Capítulo 4 · Escritura · ${wi+1} de ${writeItems.length}</span>
+        <h1>Ahora escríbelo tú</h1>
+        <p class="es">Escribe la oración completa en negativo. Pista: ${esc(it.hint)}.</p>
+        <p style="font-size:1.2rem"><span class="en">${esc(it.aff)}</span></p>
+        <input type="text" id="wInp" autocomplete="off" spellcheck="false" placeholder="Escribe la oración en negativo…" aria-label="Escribe la oración en negativo" style="max-width:100%">
+        <div style="margin-top:10px"><button class="btn" id="wCheck">Comprobar</button></div>
+        <div class="fb" id="wfb" aria-live="polite"></div>
+        <div class="navrow"><button class="btn ghost" id="prevBtn">&larr; Atrás</button>
+        <button class="btn gold" id="contBtn" disabled>Siguiente &rarr;</button></div>
+      </div>`;
+      document.getElementById("prevBtn").addEventListener("click",()=>goto(S.screen-1));
+      const f=document.getElementById("wfb"),inp=document.getElementById("wInp");
+      document.getElementById("wCheck").addEventListener("click",()=>{
+        if(it.ok.includes(norm(inp.value))){
+          sOK();speak(it.say);fb(f,true,"¡Perfecto! "+it.say);
+          inp.disabled=true;document.getElementById("wCheck").disabled=true;
+          document.getElementById("contBtn").disabled=false;
+        }else{sBAD();fb(f,false,"","Todavía no. Revisa: "+it.hint+". Cuida el orden y la ortografía.");}
+      });
+      inp.addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("wCheck").click();});
+      document.getElementById("contBtn").addEventListener("click",()=>{wi++;if(wi>=writeItems.length)done("n3");wdraw();window.scrollTo(0,0);});
+    }
+    wdraw();
+  }
+  if(isDone("n2")){writePhase();return;}
+  if(isDone("n1")){
+    mcDrill({
+      key:"n2",eyebrow:"Capítulo 4 · Transformación",title:"De afirmativo a negativo",
+      items:items,
+      doneTitle:"¡Buena selección!",doneMsg:"Ahora sube el reto: vas a escribir las oraciones tú mismo.",nextLabel:"Escribir mis oraciones",
+      nextOverride:()=>{writePhase();window.scrollTo(0,0);}
+    });
+    return;
+  }
+  {
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 4 · Gramática</span>
+      <h1>El negativo: don't y doesn't</h1>
+      <p class="es">Valentina le explica los horarios a Daniel. Compara las dos columnas y escucha.</p>
+      <div class="matchcols">
+        <div class="flip" style="text-align:left;cursor:default"><strong style="color:var(--ok)">✔ Afirmativo</strong>
+          <p class="en">I work on Mondays.</p>
+          <p class="en">Daniel works on Saturdays.</p></div>
+        <div class="flip" style="text-align:left;cursor:default"><strong style="color:var(--bad)">✘ Negativo</strong>
+          <p class="en">I <strong>don't work</strong> on Sundays. ${say("I don't work on Sundays.","v")}</p>
+          <p class="en">Daniel <strong>doesn't work</strong> at night. ${say("Daniel doesn't work at night.","v")}</p></div>
+      </div>
+      <p><strong>Observa:</strong></p>
+      <p><span class="en">I / You / We / They</span> + <span class="en"><strong>don't</strong></span> + verbo base<br>
+      <span class="en">He / She / It</span> + <span class="en"><strong>doesn't</strong></span> + verbo base</p>
+      <div class="note"><span role="img" aria-label="alerta">⚠️</span> Después de <span class="en">doesn't</span>, el verbo pierde la -s: <span class="en">She doesn't work<s>s</s>.</span> La -s ya está en <span class="en">doesn't</span>.</div>
+      <div class="navrow"><button class="btn ghost" id="prevBtn">&larr; Atrás</button>
+      <button class="btn gold" id="goPrac">Transformar oraciones &rarr;</button></div>
+    </div>`;
+    bindSay(app);
+    document.getElementById("prevBtn").addEventListener("click",()=>goto(S.screen-1));
+    document.getElementById("goPrac").addEventListener("click",()=>{done("n1");s7();window.scrollTo(0,0);});
+  }
+}
+
+/* 8 · PREGUNTAS: la conversación central + fórmula + mapa */
+function s8(){
+  let step=isDone("q1")?2:0;
+  const parts=[
+   /* Paso 1: la conversación */
+   `<h3>La entrevista <span class="es">(escucha toda la conversación)</span></h3>
+    ${bubble("v",`<span class="en">Welcome to Caribe Vivo, Daniel! I need some information for the schedule. <strong>Do you</strong> get up early?</span>`,"Welcome to Caribe Vivo, Daniel! I need some information for the schedule. Do you get up early?")}
+    ${bubble("d",`<span class="en"><strong>Yes, I do.</strong> I get up at 5:00 a.m.</span>`,"Yes, I do. I get up at five a m.")}
+    ${bubble("v",`<span class="en">Great! <strong>What time do you</strong> have breakfast?</span>`,"Great! What time do you have breakfast?")}
+    ${bubble("d",`<span class="en">I have breakfast <strong>at 6:00</strong>.</span>`,"I have breakfast at six.")}
+    ${bubble("v",`<span class="en">Perfect. <strong>When do you</strong> study English?</span>`,"Perfect. When do you study English?")}
+    ${bubble("d",`<span class="en">I study English <strong>in the evening</strong>, after work.</span>`,"I study English in the evening, after work.")}
+    ${bubble("v",`<span class="en">One more question. <strong>Do you</strong> work on Sundays?</span>`,"One more question. Do you work on Sundays?")}
+    ${bubble("d",`<span class="en"><strong>No, I don't.</strong> Sunday is my family day.</span>`,"No, I don't. Sunday is my family day.")}`,
+   /* Paso 2: la fórmula */
+   `<h3>La fórmula de la pregunta</h3>
+    <div class="formula" role="img" aria-label="Fórmula: palabra de pregunta opcional, más do, más you, más verbo base">
+      <span class="piece q">What time / When</span><span class="piece">do</span><span class="piece">you</span><span class="piece">verbo base</span><span class="piece">…?</span>
+    </div>
+    <p class="es">Si la pregunta es de <strong>sí o no</strong>, no lleva palabra de pregunta: empieza directo con <span class="en">Do you…?</span></p>
+    <p class="en">Do you get up early? ${say("Do you get up early?","v")}<br>
+    What time do you have breakfast? ${say("What time do you have breakfast?","v")}<br>
+    When do you study English? ${say("When do you study English?","v")}</p>
+    <div class="note"><span role="img" aria-label="alerta">⚠️</span> El verbo después de <span class="en">do</span> va en forma base y el orden es fijo: primero <span class="en">do</span>, después <span class="en">you</span>. <span class="en">✘ What time you do…?</span></div>`,
+   /* Paso 3: el mapa pregunta-respuesta */
+   `<h3>Cada pregunta tiene su tipo de respuesta</h3>
+    <table class="qamap">
+      <tr><th>Pregunta</th><th>Pide…</th><th>Respuesta modelo</th></tr>
+      <tr><td class="en">Do you…?</td><td>Sí o no</td><td class="en">Yes, I do. / No, I don't. ${say("Yes, I do. No, I don't.","d")}</td></tr>
+      <tr><td class="en">What time do you…?</td><td>Hora exacta</td><td class="en">At 6:00 a.m. ${say("At six a m.","d")}</td></tr>
+      <tr><td class="en">When do you…?</td><td>Momento o día</td><td class="en">In the evening. / On Sundays. ${say("In the evening. On Sundays.","d")}</td></tr>
+    </table>
+    <div class="note"><span role="img" aria-label="idea">💡</span> Truco de líder de turismo: antes de responder, pregúntate <strong>¿qué me están pidiendo?</strong> ¿Una hora, un momento o un sí/no? Así nunca respondes <span class="en">Yes, I do</span> cuando te preguntan <span class="en">What time…?</span></div>`
+  ];
+  function draw(){
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 5 · El corazón del OVA: las preguntas</span>
+      <h1>Valentina entrevista a Daniel</h1>
+      ${parts.slice(0,step+1).join("")}
+      ${step<2?`<button class="btn" id="moreBtn">Siguiente idea (${step+1}/3)</button>`:""}
+      ${navRow(true,"Practicar preguntas")}
+    </div>`;
+    bindSay(app);bindNav();
+    gate("nextBtn",step>=2);
+    const mb=document.getElementById("moreBtn");
+    if(mb)mb.addEventListener("click",()=>{step++;if(step>=2)done("q1");draw();});
+    if(step>=2)done("q1");
+  }
+  draw();
+}
+
+/* 9 · Matching pregunta ↔ respuesta */
+function s9(){
+  matchDrill({
+    key:"q2",eyebrow:"Capítulo 5 · Práctica 1",title:"Une cada pregunta con su respuesta",
+    desc:"Toca una pregunta y luego la respuesta que le corresponde. Piensa: ¿pide hora, momento o sí/no?",
+    pairs:[
+     {l:{v:"p1",html:"Do you get up early?"},r:{v:"p1",html:"Yes, I do."}},
+     {l:{v:"p2",html:"What time do you have lunch?"},r:{v:"p2",html:"At 12:30."}},
+     {l:{v:"p3",html:"When do you work?"},r:{v:"p3",html:"From Monday to Saturday."}},
+     {l:{v:"p4",html:"Do you work on Sundays?"},r:{v:"p4",html:"No, I don't."}},
+     {l:{v:"p5",html:"What time do you go to bed?"},r:{v:"p5",html:"At 9:30 p.m."}},
+     {l:{v:"p6",html:"When do you study English?"},r:{v:"p6",html:"In the evening."}}
+    ],
+    doneMsg:"¡Perfecto! Ya conectas cada pregunta con su tipo de respuesta.",
+    nextLabel:"Siguiente reto"
+  });
+}
+
+/* 10 · Clasificación en columnas */
+function s10(){
+  const cats=["Hora exacta ⏰","Momento o día 📅","Sí o No ✅"];
+  const items=shuffle([
+   {t:"What time do you start work?",c:0},
+   {t:"Do you have breakfast at home?",c:2},
+   {t:"When do you visit Tayrona?",c:1},
+   {t:"What time do you go to bed?",c:0},
+   {t:"When do you study English?",c:1},
+   {t:"Do you work on Sundays?",c:2}
+  ]);
+  let idx=isDone("q3")?items.length:0;
+  const bins=[[],[],[]];
+  function draw(){
+    if(idx>=items.length){
+      app.innerHTML=`<div class="card"><span class="eyebrow">Capítulo 5 · Práctica 2</span>
+      <h1>¡Clasificación completa!</h1>
+      <div class="fb ok" style="display:block">Ya reconoces qué pide cada pregunta antes de responder. Esa es la clave.</div>
+      ${navRow(true,"Construir preguntas")}</div>`;
+      bindNav();gate("nextBtn",true);return;
+    }
+    const it=items[idx];
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 5 · Práctica 2 · ${idx+1} de ${items.length}</span>
+      <h1>¿Qué pide esta pregunta?</h1>
+      <p class="es">Lee (y escucha) la pregunta. Clasifícala en la columna correcta según el tipo de respuesta que pide.</p>
+      <div class="qcard">${esc(it.t)}<div>${say(it.t,"v")}</div></div>
+      <div class="cols3">
+      ${cats.map((c,i)=>`<div><button class="colbtn" data-c="${i}" style="width:100%">${c}</button>
+        <div class="colbin" aria-label="Preguntas clasificadas en ${esc(c)}">${bins[i].map(x=>`<span>✔ ${esc(x)}</span>`).join("")}</div></div>`).join("")}
+      </div>
+      <div class="fb" id="cfb" aria-live="polite"></div>
+    </div>`;
+    bindSay(app);
+    const f=document.getElementById("cfb");
+    app.querySelectorAll(".colbtn").forEach(b=>b.addEventListener("click",()=>{
+      if(Number(b.dataset.c)===it.c){
+        bins[it.c].push(it.t);sOK();idx++;
+        if(idx>=items.length)done("q3");
+        draw();window.scrollTo(0,0);
+      }else{
+        sBAD();
+        const hints=["Esa columna es para preguntas que piden la hora exacta (What time…?).","Esa columna es para preguntas que piden un momento o día (When…?).","Esa columna es para preguntas de sí o no (Do you…?)."];
+        fb(f,false,"",hints[Number(b.dataset.c)]+" Vuelve a leer la pregunta.");
+      }
+    }));
+  }
+  draw();
+}
+
+/* 11 · Constructor de preguntas (ordenar palabras) */
+function s11(){
+  const sentences=[
+   {words:["Do","you","get","up","early?"],say:"Do you get up early?",hint:"Pregunta de sí o no: empieza con Do."},
+   {words:["What","time","do","you","start","work?"],say:"What time do you start work?",hint:"Pide la hora exacta."},
+   {words:["When","do","you","have","lunch?"],say:"When do you have lunch?",hint:"Pide el momento del día."},
+   {words:["What","time","do","you","go","to","bed?"],say:"What time do you go to bed?",hint:"Pide la hora exacta."}
+  ];
+  let si=isDone("q4")?sentences.length:0;
+  function draw(){
+    if(si>=sentences.length){
+      app.innerHTML=`<div class="card"><span class="eyebrow">Capítulo 5 · Práctica 3</span>
+      <h1>¡Ya construyes preguntas!</h1>
+      <div class="fb ok" style="display:block">Recuerda el orden fijo: (palabra de pregunta) + do + you + verbo base.</div>
+      ${navRow(true,"Detectar errores")}</div>`;
+      bindNav();gate("nextBtn",true);return;
+    }
+    const s=sentences[si];
+    let built=[];
+    const bank=shuffle(s.words.map((w,i)=>({w,i})));
+    function paint(){
+      const bEl=document.getElementById("builder"),kEl=document.getElementById("bank");
+      bEl.innerHTML=built.length?built.map((t,j)=>`<button class="chip inb" data-j="${j}" aria-label="Quitar palabra ${esc(t.w)}">${esc(t.w)}</button>`).join(""):`<span class="es">Toca las palabras en orden…</span>`;
+      kEl.innerHTML=bank.filter(t=>!built.includes(t)).map(t=>`<button class="chip" data-i="${t.i}" aria-label="Agregar palabra ${esc(t.w)}">${esc(t.w)}</button>`).join("");
+      bEl.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{built.splice(Number(c.dataset.j),1);paint();}));
+      kEl.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{built.push(bank.find(t=>t.i===Number(c.dataset.i)));paint();}));
+      document.getElementById("checkBtn").disabled=built.length!==s.words.length;
+    }
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 5 · Práctica 3 · ${si+1} de ${sentences.length}</span>
+      <h1>Ordena la pregunta</h1>
+      <p class="es">${esc(s.hint)} Toca las palabras en el orden correcto. Toca una palabra del recuadro para quitarla.</p>
+      <div class="builder" id="builder"></div>
+      <div class="bank" id="bank"></div>
+      <button class="btn" id="checkBtn" disabled>Comprobar</button>
+      <div class="fb" id="qfb" aria-live="polite"></div>
+      <div class="navrow"><span></span><button class="btn gold" id="contBtn" disabled>Siguiente &rarr;</button></div>
+    </div>`;
+    paint();
+    const f=document.getElementById("qfb");
+    document.getElementById("checkBtn").addEventListener("click",()=>{
+      const ans=built.map(t=>t.w).join(" ");
+      if(ans===s.words.join(" ")){
+        sOK();speak(s.say,"v");fb(f,true,"¡Perfecto! "+s.say);
+        document.getElementById("contBtn").disabled=false;
+        document.getElementById("checkBtn").disabled=true;
+      }else{sBAD();fb(f,false,"","Ese orden no es correcto. Recuerda: (palabra de pregunta) + do + you + verbo.");}
+    });
+    document.getElementById("contBtn").addEventListener("click",()=>{si++;if(si>=sentences.length)done("q4");draw();window.scrollTo(0,0);});
+  }
+  draw();
+}
+
+/* 12 · Encuentra y corrige el error */
+function s12(){
+  mcDrill({
+    key:"q5",eyebrow:"Capítulo 5 · Práctica 4",title:"El control de calidad de Valentina",
+    intro:`<p class="es">Daniel escribió estas preguntas para los turistas, pero cada una tiene un error. Elige la versión corregida.</p>`,
+    items:[
+     {pre:`<div class="qcard" style="background:var(--badbg);border-color:var(--bad);color:var(--bad)">✘ What time you do start work?</div>`,
+      opts:["What time do you start work?","What time you start work?","What do time you start work?"],ok:0,sayOK:"What time do you start work?",why:"El orden es fijo: What time + do + you + verbo."},
+     {pre:`<div class="qcard" style="background:var(--badbg);border-color:var(--bad);color:var(--bad)">✘ Do you gets up early?</div>`,
+      opts:["Do you getting up early?","Do you get up early?","Does you get up early?"],ok:1,sayOK:"Do you get up early?",why:"Después de do, el verbo va en forma base: get, sin -s."},
+     {pre:`<div class="qcard" style="background:var(--badbg);border-color:var(--bad);color:var(--bad)">✘ When you have lunch?</div>`,
+      opts:["When do you have lunch?","When you do have lunch?","When have you lunch?"],ok:0,sayOK:"When do you have lunch?",why:"A la pregunta le faltaba do: When + do + you + verbo."},
+     {pre:`<div class="qcard" style="background:var(--badbg);border-color:var(--bad);color:var(--bad)">✘ Do you work on Sundays? — No, I doesn't.</div>`,
+      opts:["No, I not.","No, I doesn't work.","No, I don't."],ok:2,sayOK:"No, I don't.",why:"La respuesta corta con I es No, I don't. (doesn't es para he, she, it)."}
+    ],
+    doneTitle:"¡Control de calidad aprobado!",doneMsg:"Valentina está impresionada: detectas y corriges errores en las preguntas.",nextLabel:"Ir a la escucha"
+  });
+}
+
+/* 13 · Escucha: listening MC + ¿quién lo dijo? */
+function s13(){
+  let phase=isDone("l1")?"who":"listen";
+  const listenItems=[
+   {audio:"I start work at six o'clock in the morning.",who:"v",q:"¿A qué hora empieza a trabajar Valentina?",opts:["A las 6:00 a.m.","A las 4:00 p.m.","A las 11:00 a.m."],ok:0,why:"Dijo: I start work at six o'clock in the morning."},
+   {audio:"I have lunch at twelve thirty.",who:"d",q:"¿A qué hora almuerza Daniel?",opts:["A las 12:13","A las 12:30","A las 2:30"],ok:1,why:"twelve thirty = 12:30. ¡Cuidado con thirteen y thirty!"},
+   {audio:"I don't work on Sundays.",who:"d",q:"¿Qué día NO trabaja Daniel?",opts:["El sábado","El lunes","El domingo"],ok:2,why:"Dijo: I don't work on Sundays."},
+   {audio:"What time do you go to bed?",who:"v",q:"¿Qué información pide Valentina?",opts:["Una hora exacta","Un sí o un no","Un lugar"],ok:0,why:"What time…? siempre pide la hora exacta."}
+  ];
+  const whoItems=[
+   {audio:"I'm the tour leader. I organize the schedules and the guides.",who:"v",why:"Organiza horarios y guías: es la líder, Valentina. Su voz es más aguda."},
+   {audio:"I'm new here. I don't know the schedule for the high season.",who:"d",why:"Es nuevo y no conoce el horario: es Daniel. Su voz es más grave."},
+   {audio:"I wake up at four thirty because the tours leave very early.",who:"v",why:"Se levanta a las 4:30 por los tours: es Valentina."},
+   {audio:"I watch the sunset at Taganga every evening after work.",who:"d",why:"Ve el atardecer en Taganga después del trabajo: es Daniel."}
+  ];
+  if(phase==="listen"){
+    mcDrill({
+      key:"l1",eyebrow:"Capítulo 6 · Escucha 1",title:"Escucha y responde",
+      intro:`<p class="es">No hay texto: solo tus oídos. Puedes escuchar el audio las veces que necesites (y activar la tortuga 🐢 para oírlo lento).</p>`,
+      items:listenItems.map(it=>({
+        pre:`<div style="text-align:center;margin:14px 0">${say(it.audio,it.who,"Reproducir el audio")}</div><p><strong>${esc(it.q)}</strong></p>`,
+        opts:it.opts,ok:it.ok,why:it.why,wrongMsg:"Escucha el audio otra vez, con calma."
+      })),
+      doneTitle:"¡Primera escucha superada!",doneMsg:"Ahora, un reto de detective: ¿quién lo dijo?",nextLabel:"¿Quién lo dijo?",
+      nextOverride:()=>{phase="who";s13();window.scrollTo(0,0);}
+    });
+    return;
+  }
+  mcDrill({
+    key:"l2",eyebrow:"Capítulo 6 · Escucha 2",title:"¿Quién lo dijo?",
+    intro:`<p class="es">Escucha la línea y decide: ¿la dijo Valentina (voz aguda, la líder) o Daniel (voz grave, el guía nuevo)? Usa la voz y también las pistas del contenido.</p>`,
+    items:whoItems.map(it=>({
+      pre:`<div style="text-align:center;margin:14px 0">${say(it.audio,it.who,"Reproducir el audio")}</div>`,
+      opts:["👩🏽‍✈️ Valentina","🧑🏽‍🦱 Daniel"],ok:it.who==="v"?0:1,why:it.why,wrongMsg:"Escucha otra vez: fíjate en la voz y en lo que dice."
+    })),
+    doneTitle:"¡Oído de detective!",doneMsg:"Reconociste las voces y las pistas del contenido.",nextLabel:"La agenda de Daniel"
+  });
+}
+
+/* 14 · Information gap: la agenda de Daniel */
+function s14(){
+  const rows=[
+   {label:"Se levanta",qs:["What time do you get up?","Do you get up?","When you get up?"],ok:0,ans:"I get up at 5:00 a.m.",show:"5:00 a.m.",why:"Necesitas una hora exacta: What time do you get up?"},
+   {label:"Desayuna",qs:["When do you have breakfast at?","What time do you have breakfast?","Do you breakfast?"],ok:1,ans:"I have breakfast at 6:00.",show:"6:00 a.m.",why:"Hora exacta y orden correcto: What time do you have breakfast?"},
+   {label:"¿Trabaja los domingos?",qs:["What time do you work on Sundays?","When do you Sundays?","Do you work on Sundays?"],ok:2,ans:"No, I don't. I don't work on Sundays.",show:"No ✘",why:"Es una pregunta de sí o no: Do you work on Sundays?"},
+   {label:"Estudia inglés",qs:["When do you study English?","Do you study English at?","What do you time study?"],ok:0,ans:"I study English in the evening.",show:"In the evening",why:"Pides un momento del día: When do you study English?"},
+   {label:"Se acuesta",qs:["Do you go to bed?","What time do you go to bed?","When do you bed?"],ok:1,ans:"I go to bed at 10:00 p.m.",show:"10:00 p.m.",why:"Hora exacta: What time do you go to bed?"}
+  ];
+  let idx=isDone("ig1")?rows.length:0;
+  const unlocked=isDone("ig1")?rows.map(r=>r.show):[];
+  function draw(){
+    const table=`<table class="agenda"><tr><th>Agenda de Daniel</th><th>Dato</th></tr>
+    ${rows.map((r,i)=>`<tr><td>${esc(r.label)}</td><td class="${i<unlocked.length?"open":"lock"}">${i<unlocked.length?esc(rows[i].show):"🔒 bloqueado"}</td></tr>`).join("")}</table>`;
+    if(idx>=rows.length){
+      app.innerHTML=`<div class="card"><span class="eyebrow">Capítulo 7 · La agenda</span>
+      <h1>¡Agenda completa!</h1>
+      <p class="es">Con tus preguntas, Valentina ya tiene toda la información de Daniel para el cronograma.</p>
+      ${table}
+      <div class="fb ok" style="display:block">Esto es exactamente lo que hacen las preguntas: desbloquear información.</div>
+      ${navRow(true,"Conversar con Valentina")}</div>`;
+      bindNav();gate("nextBtn",true);return;
+    }
+    const r=rows[idx];
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 7 · La agenda de Daniel · ${idx+1} de ${rows.length}</span>
+      <h1>Pregunta para desbloquear</h1>
+      <p class="es">Valentina necesita llenar la agenda de Daniel, pero cada dato está bloqueado. <strong>Elige la pregunta correcta</strong> y Daniel te responderá.</p>
+      ${table}
+      <h3>Dato bloqueado: ${esc(r.label)}. ¿Qué le preguntas a Daniel?</h3>
+      ${shuffle(r.qs.map((q,i)=>({q,i}))).map(x=>`<button class="opt" data-i="${x.i}">${esc(x.q)}</button>`).join("")}
+      <div class="fb" id="igfb" aria-live="polite"></div>
+      <div id="danielSays"></div>
+      <div class="navrow"><span></span><button class="btn gold" id="contBtn" disabled>Siguiente dato &rarr;</button></div>
+    </div>`;
+    const f=document.getElementById("igfb");
+    app.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{
+      if(Number(b.dataset.i)===r.ok){
+        app.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+        b.classList.add("right");sOK();
+        fb(f,true,"¡Pregunta perfecta! "+r.why);
+        document.getElementById("danielSays").innerHTML=bubble("d",`<span class="en">${esc(r.ans)}</span>`,r.ans);
+        bindSay(document.getElementById("danielSays"));
+        speak(r.ans,"d");
+        document.getElementById("contBtn").disabled=false;
+      }else{b.classList.add("wrong");b.disabled=true;sBAD();fb(f,false,"","Esa pregunta está mal formada o no pide ese dato. Prueba otra.");}
+    }));
+    document.getElementById("contBtn").addEventListener("click",()=>{unlocked.push(r.show);idx++;if(idx>=rows.length)done("ig1");draw();window.scrollTo(0,0);});
+  }
+  draw();
+}
+
+/* 15 · Completa el diálogo con menús (dropdowns) */
+function s15(){
+  const blanks=[
+   {opts:["Do","Does","Is"],ok:0},
+   {opts:["do","does","am"],ok:0},
+   {opts:["time","hour","o'clock"],ok:0},
+   {opts:["start","starts","starting"],ok:0},
+   {opts:["at","in","on"],ok:0},
+   {opts:["When","What","Do"],ok:0},
+   {opts:["On","At","In"],ok:0}
+  ];
+  function sel(i){return `<select data-b="${i}" aria-label="Espacio ${i+1}"><option value="-1">…</option>${blanks[i].opts.map((o,j)=>`<option value="${j}">${esc(o)}</option>`).join("")}</select>`;}
+  app.innerHTML=`
+  <div class="card">
+    <span class="eyebrow">Capítulo 8 · En la oficina</span>
+    <h1>Completa la conversación</h1>
+    <p class="es">Una turista visita la agencia. Completa el diálogo entre Valentina y la turista con los menús. Luego pulsa Comprobar.</p>
+    ${bubble("t",`<span class="en">Good morning! ${sel(0)} you have tours to Tayrona?</span>`)}
+    ${bubble("v",`<span class="en">Yes, we ${sel(1)}! Every day except Monday.</span>`)}
+    ${bubble("t",`<span class="en">Great! What ${sel(2)} do the tours ${sel(3)}?</span>`)}
+    ${bubble("v",`<span class="en">They start ${sel(4)} 6:00 a.m.</span>`)}
+    ${bubble("t",`<span class="en">${sel(5)} do you visit the Centro Histórico?</span>`)}
+    ${bubble("v",`<span class="en">${sel(6)} Fridays, in the afternoon.</span>`)}
+    <button class="btn" id="checkBtn" disabled>Comprobar</button>
+    <div class="fb" id="dfb2" aria-live="polite"></div>
+    ${navRow(true,"Conversación final")}
+  </div>`;
+  bindNav();
+  if(isDone("dd1"))gate("nextBtn",true);
+  const sels=Array.from(app.querySelectorAll("select"));
+  function ready(){gate("checkBtn",sels.every(s=>s.value!=="-1"));}
+  sels.forEach(s=>s.addEventListener("change",()=>{s.classList.remove("right","wrong");ready();}));ready();
+  const f=document.getElementById("dfb2");
+  document.getElementById("checkBtn").addEventListener("click",()=>{
+    let good=0;
+    sels.forEach(s=>{
+      const i=Number(s.dataset.b);
+      const ok=Number(s.value)===blanks[i].ok;
+      s.classList.remove("right","wrong");
+      s.classList.add(ok?"right":"wrong");
+      if(ok)good++;
+    });
+    if(good===blanks.length){
+      sOK();fb(f,true,"¡Diálogo perfecto! Escúchalo completo.");
+      speak("Good morning! Do you have tours to Tayrona? Yes, we do! Every day except Monday. Great! What time do the tours start? They start at six a m. When do you visit the Centro Histórico? On Fridays, in the afternoon.");
+      done("dd1");gate("nextBtn",true);
+    }else{
+      sBAD();fb(f,false,"","Hay "+(blanks.length-good)+" espacio(s) en rojo. Corrígelos y comprueba de nuevo.");
+    }
+  });
+}
+
+/* 16 · Escenario ramificado: tú conversas con Valentina */
+function s16(){
+  const turns=[
+   {mode:"answer",v:"Hello! I'm organizing the new schedule. Do you get up early?",
+    opts:[{t:"Yes, I do. I get up at 5:30 a.m.",ok:true},{t:"Yes, I does.",ok:false},{t:"I am get up.",ok:false}],
+    why:"Respuesta corta con I: Yes, I do."},
+   {mode:"answer",v:"Nice! What time do you have breakfast?",
+    opts:[{t:"I have breakfast at 6:30.",ok:true},{t:"Yes, I do.",ok:false},{t:"I has breakfast at 6:30.",ok:false}],
+    why:"What time…? pide hora: at 6:30. Con I, el verbo es have."},
+   {mode:"ask",v:"Now you ask me! You need to know my lunch time for the schedule.",
+    opts:[{t:"What time do you have lunch?",ok:true},{t:"When you have lunch at?",ok:false},{t:"Do you lunch what time?",ok:false}],
+    ans:"I have lunch at 1:00 p.m., after the morning tour.",
+    why:"Necesitabas una hora exacta con el orden correcto."},
+   {mode:"ask",v:"Good question! Now find out if I work on Sundays.",
+    opts:[{t:"Do you work on Sundays?",ok:true},{t:"You work on Sundays?",ok:false},{t:"What time do you Sundays?",ok:false}],
+    ans:"No, I don't. On Sundays I go to the beach with my family.",
+    why:"Pregunta de sí o no: Do you + verbo base."},
+   {mode:"answer",v:"Last one: when do you study English?",
+    opts:[{t:"I study English in the evening.",ok:true},{t:"I study English at 100 o'clock.",ok:false},{t:"No, I don't like English.",ok:false}],
+    why:"When…? pide un momento del día: in the evening."}
+  ];
+  let ti=isDone("sc1")?turns.length:0;
+  function draw(){
+    if(ti>=turns.length){
+      app.innerHTML=`<div class="card"><span class="eyebrow">Capítulo 9 · Conversación</span>
+      <h1>¡Valentina te felicita!</h1>
+      ${bubble("v",`<span class="en">Excellent! You ask and answer like a professional. Welcome to the Caribe Vivo team!</span>`,"Excellent! You ask and answer like a professional. Welcome to the Caribe Vivo team!")}
+      <div class="fb ok" style="display:block">Respondiste sus preguntas y también hiciste las tuyas. Eso es una conversación real.</div>
+      ${navRow(true,"Ruleta de práctica oral")}</div>`;
+      bindSay(app);bindNav();gate("nextBtn",true);return;
+    }
+    const t=turns[ti];
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 9 · Conversación con Valentina · ${ti+1} de ${turns.length}</span>
+      <h1>${t.mode==="ask"?"Ahora preguntas tú":"Responde a Valentina"}</h1>
+      ${bubble("v",`<span class="en">${esc(t.v)}</span>`,t.v)}
+      <p class="es">${t.mode==="ask"?"Elige la pregunta correcta para hacerle a Valentina:":"Elige tu mejor respuesta:"}</p>
+      ${shuffle(t.opts.map((o,i)=>({o,i}))).map(x=>`<button class="opt" data-ok="${x.o.ok?"1":"0"}">${esc(x.o.t)}</button>`).join("")}
+      <div class="fb" id="scfb" aria-live="polite"></div>
+      <div id="reply"></div>
+      <div class="navrow"><span></span><button class="btn gold" id="contBtn" disabled>Continuar &rarr;</button></div>
+    </div>`;
+    bindSay(app);
+    const f=document.getElementById("scfb");
+    app.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{
+      if(b.dataset.ok==="1"){
+        app.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+        b.classList.add("right");sOK();speak(b.textContent);
+        fb(f,true,"¡Muy bien! "+t.why);
+        if(t.mode==="ask"&&t.ans){
+          document.getElementById("reply").innerHTML=bubble("v",`<span class="en">${esc(t.ans)}</span>`,t.ans);
+          bindSay(document.getElementById("reply"));
+          setTimeout(()=>speak(t.ans,"v"),900);
+        }
+        document.getElementById("contBtn").disabled=false;
+      }else{b.classList.add("wrong");b.disabled=true;sBAD();fb(f,false,"","Esa opción tiene un problema gramatical o no pide el dato correcto. Prueba otra.");}
+    }));
+    document.getElementById("contBtn").addEventListener("click",()=>{ti++;if(ti>=turns.length)done("sc1");draw();window.scrollTo(0,0);});
+  }
+  draw();
+}
+
+/* 17 · Ruleta de práctica oral */
+function s17(){
+  const pool=[
+   {q:"What time do you get up?",model:"I get up at 6:00 a.m."},
+   {q:"Do you have breakfast at home?",model:"Yes, I do. / No, I don't."},
+   {q:"What time do you go to the university?",model:"I go to the university at 8:00."},
+   {q:"When do you study English?",model:"I study English in the evening."},
+   {q:"Do you work on weekends?",model:"Yes, I do. / No, I don't."},
+   {q:"What time do you go to bed?",model:"I go to bed at 10:30 p.m."}
+  ];
+  const NEED=4;
+  let doneRounds=isDone("ru1")?NEED:0;
+  let bag=[];
+  function nextQ(){if(!bag.length)bag=shuffle(pool.map((_,i)=>i));return pool[bag.shift()];}
+  let current=null,spin=0;
+  function draw(){
+    app.innerHTML=`
+    <div class="card" style="text-align:center">
+      <span class="eyebrow">Capítulo 10 · Práctica oral</span>
+      <h1>La ruleta de preguntas</h1>
+      <p class="es">Gira la ruleta. Escucha la pregunta y <strong>respóndela en voz alta</strong> con tu propia información. Luego compara con la respuesta modelo y evalúate con honestidad. Completa ${NEED} rondas.</p>
+      <div class="rounds" aria-label="Rondas completadas: ${doneRounds} de ${NEED}">${Array.from({length:NEED},(_,i)=>`<span class="${i<doneRounds?"did":""}"></span>`).join("")}</div>
+      <div><span class="wheel" id="wheel" role="img" aria-label="ruleta">🎡</span></div>
+      <button class="btn gold" id="spinBtn" ${doneRounds>=NEED?"disabled":""}>Girar la ruleta</button>
+      <div id="qzone"></div>
+      ${navRow(true,"Construir mis 8 oraciones")}
+    </div>`;
+    bindNav();gate("nextBtn",doneRounds>=NEED);
+    document.getElementById("spinBtn").addEventListener("click",()=>{
+      spin+=720+Math.floor(Math.random()*360);
+      document.getElementById("wheel").style.transform="rotate("+spin+"deg)";
+      current=nextQ();
+      setTimeout(()=>{
+        speak(current.q,"v");
+        document.getElementById("qzone").innerHTML=`
+        <div class="qcard">${esc(current.q)}<div>${say(current.q,"v","Escuchar de nuevo")}</div></div>
+        <p class="es"><strong>Respóndela en voz alta, con tu información real.</strong></p>
+        <button class="btn" id="revealBtn">Ver respuesta modelo</button>
+        <div id="modelZone"></div>`;
+        bindSay(document.getElementById("qzone"));
+        document.getElementById("revealBtn").addEventListener("click",()=>{
+          document.getElementById("modelZone").innerHTML=`
+          <div class="note" style="text-align:left"><strong>Modelo:</strong> <span class="en">${esc(current.model)}</span> ${say(current.model,"d")}<br><span class="es">Tu respuesta puede tener otra hora u otro dato: lo importante es la estructura.</span></div>
+          <p class="es">¿Cómo te fue?</p>
+          <button class="btn gold" id="selfOK">✔ Lo dije bien</button>
+          <button class="btn ghost" id="selfNo">Necesito repetirla</button>`;
+          bindSay(document.getElementById("modelZone"));
+          document.getElementById("selfOK").addEventListener("click",()=>{doneRounds++;sOK();if(doneRounds>=NEED){done("ru1");sWIN();}draw();window.scrollTo(0,0);});
+          document.getElementById("selfNo").addEventListener("click",()=>{speak(current.q,"v");document.getElementById("modelZone").querySelectorAll(".btn").forEach(b=>b.blur());});
+        },{once:true});
+      },700);
+    });
+  }
+  draw();
+}
+
+/* 18 · Construye tu rutina: 8 oraciones libres (tarea) */
+function s18(){
+  if(!Array.isArray(S.routine)||S.routine.length!==8||S.routine.some(r=>typeof r!=="string")){S.routine=Array(8).fill("");}
+  const okLine=t=>{t=t.trim();return /^i\s+\S+/i.test(t)&&t.split(/\s+/).length>=4;};
+  const allOK=()=>S.routine.every(okLine);
+  const clean=t=>t.trim().replace(/\s+/g," ");
+  function draw(){
+    app.innerHTML=`
+    <div class="card">
+      <span class="eyebrow">Capítulo 11 · Tu misión</span>
+      <h1>Escribe tu rutina en 8 oraciones</h1>
+      ${bubble("v",`<span class="en">Now it's your turn! Tell me about YOUR day in 8 sentences. Use YOUR activities and YOUR real times!</span>`,"Now it's your turn! Tell me about your day in eight sentences. Use your activities and your real times!")}
+      <p class="es">Escribe <strong>8 oraciones diferentes</strong> sobre tu propio día, en orden cronológico. Son tuyas: puedes usar cualquier actividad, no solo las del OVA.</p>
+      <div class="note"><span role="img" aria-label="idea">💡</span> <strong>Pistas para armar cada oración:</strong><br>
+      Estructura: <span class="en">I + verbo + at + hora</span> → <span class="en">I wake up at 6:00 a.m.</span><br>
+      Ideas del OVA: <span class="en">wake up, get up, take a shower, have breakfast, go to work, have lunch, go to bed…</span><br>
+      Ideas libres: <span class="en">check my phone, study English, play video games, go to the gym, watch TV, listen to music, walk my dog, cook dinner…</span><br>
+      También puedes usar momentos: <span class="en">in the morning, in the afternoon, at night, on weekends</span>.</div>
+      ${S.routine.map((r,i)=>`
+      <div class="rrow">
+        <div class="num">${i+1}</div>
+        <div class="ctrl" style="width:100%">
+          <input type="text" data-r="${i}" value="${esc(r)}" autocomplete="off" spellcheck="false" placeholder="I ..." aria-label="Oración ${i+1} de tu rutina" style="max-width:100%;flex:1">
+        </div>
+        <div class="prev" id="st${i}"></div>
+      </div>`).join("")}
+      <div class="fb" id="rfb" aria-live="polite"></div>
+      <div id="finalText"></div>
+      <div style="margin-top:10px">
+        <button class="btn" id="hearBtn" disabled><span role="img" aria-label="audio">🔊</span> Escuchar mis oraciones</button>
+        <button class="btn gold" id="copyBtn" disabled>Copiar mis 8 oraciones</button>
+      </div>
+      <div class="note hw"><span role="img" aria-label="cuaderno">📝</span> <strong>Tarea para la próxima clase:</strong> copia estas 8 oraciones <strong>a mano en tu cuaderno</strong> y <strong>practícalas en voz alta</strong> varias veces (usa el botón de audio como modelo). Debes llevarlas <strong>escritas y practicadas</strong> a clase: las vamos a usar en una actividad de preguntas en parejas.</div>
+      ${navRow(true,"Ir a la evaluación final")}
+    </div>`;
+    bindSay(app);bindNav();
+    const f=document.getElementById("rfb");
+    function refresh(){
+      S.routine.forEach((r,i)=>{
+        const st=document.getElementById("st"+i);
+        if(!r.trim()){st.innerHTML="";}
+        else if(okLine(r)){st.innerHTML=`<span style="color:var(--ok)">✔ Oración ${i+1} lista</span>`;}
+        else{st.innerHTML=`<span class="es" style="color:var(--bad)">Empieza con "I" y escribe la oración completa (mínimo 4 palabras).</span>`;}
+      });
+      const ok=allOK();
+      gate("nextBtn",ok);gate("hearBtn",ok);gate("copyBtn",ok);
+      if(ok){
+        fb(f,true,"¡Tus 8 oraciones están listas! Este es tu texto:");
+        document.getElementById("finalText").innerHTML=`<div class="mytext">${S.routine.map((r,i)=>(i+1)+". "+esc(clean(r))).join("<br>")}</div>`;
+        done("rt1");
+      }else{f.className="fb";document.getElementById("finalText").innerHTML="";}
+    }
+    app.querySelectorAll(".rrow input").forEach(inp=>inp.addEventListener("input",()=>{
+      S.routine[Number(inp.dataset.r)]=inp.value;save();refresh();
+    }));
+    document.getElementById("hearBtn").addEventListener("click",()=>{
+      speak(S.routine.map(clean).join(". ").replace(/a\.m\./gi,"a m").replace(/p\.m\./gi,"p m"));
+    });
+    document.getElementById("copyBtn").addEventListener("click",()=>{
+      const txt="Mi rutina diaria · "+S.name+"\n"+S.routine.map((r,i)=>(i+1)+". "+clean(r)).join("\n")+"\nTarea: escribir a mano y practicar en voz alta para la próxima clase.";
+      try{
+        navigator.clipboard.writeText(txt).then(()=>{fb(f,true,"¡Copiado! Pégalo donde quieras, pero recuerda: la tarea es escribirlo a mano.");sOK();});
+      }catch(e){
+        const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();
+        try{document.execCommand("copy");fb(f,true,"¡Copiado! Pégalo donde quieras, pero recuerda: la tarea es escribirlo a mano.");}catch(e2){}
+        document.body.removeChild(ta);
+      }
+    });
+    refresh();
+  }
+  draw();
+}
+
+/* ================= EVALUACIÓN (50 pts, énfasis en preguntas) ================= */
+const EVAL={
+ p1:{title:"Parte 1 · Vocabulario (8 pts)",items:[
+  {q:"🚿 Por la mañana, después de levantarme, yo ______.",opts:["take a shower","go to bed","have dinner"],ok:0,why:"take a shower = ducharse."},
+  {q:"☕ A las 6:00 a.m., Valentina ______ .",opts:["finishes work","has breakfast","goes to bed"],ok:1,why:"have breakfast = desayunar."},
+  {q:"🛎️ Daniel llega a la agencia y ______ a las 8:30.",opts:["gets dressed","wakes up","starts work"],ok:2,why:"start work = empezar a trabajar."},
+  {q:"🌙 A las 10:00 p.m., yo ______.",opts:["go to bed","have lunch","start work"],ok:0,why:"go to bed = acostarse."}
+ ]},
+ p2:{title:"Parte 2 · La hora (8 pts)",items:[
+  {q:"8:00 &rarr;",opts:["It's eight o'clock.","It's eight thirty.","It's o'clock eight."],ok:0,why:"Minutos en 00: It's + número + o'clock."},
+  {q:"3:30 &rarr;",opts:["It's three thirteen.","It's three thirty.","It's thirty three."],ok:1,why:"Lectura digital: three thirty."},
+  {q:"Las 9 de la noche se escribe:",opts:["9:00 a.m.","9:00 p.m.","19:00 a.m."],ok:1,why:"La noche usa p.m."},
+  {q:"I have dinner ______ 7:00 p.m.",opts:["in","on","at"],ok:2,why:"Con horas exactas usamos at."}
+ ]},
+ p3:{title:"Parte 3 · Presente simple afirmativo (8 pts)",items:[
+  {q:"Valentina ______ up at 4:30 a.m. (wake)",opts:["wake","wakes","waking"],ok:1,why:"She &rarr; verbo con -s: wakes."},
+  {q:"I ______ breakfast at home. (have)",opts:["has","haves","have"],ok:2,why:"Con I: forma base, have."},
+  {q:"Daniel ______ to the office at 8:30. (go)",opts:["goes","go","gos"],ok:0,why:"go + -es = goes."},
+  {q:"She ______ work at 5:00 p.m. (finish)",opts:["finishs","finishes","finish"],ok:1,why:"finish termina en sh: finishes."}
+ ]},
+ p4:{title:"Parte 4 · Negativo (8 pts)",items:[
+  {q:"I ______ work on Sundays.",opts:["doesn't","don't","not"],ok:1,why:"Con I: don't."},
+  {q:"Valentina ______ work at night.",opts:["don't","no","doesn't"],ok:2,why:"Valentina = she: doesn't."},
+  {q:"He doesn't ______ up early on Saturdays.",opts:["get","gets","getting"],ok:0,why:"Después de doesn't: forma base."},
+  {q:"She ______ TV in the morning.",opts:["don't watch","doesn't watches","doesn't watch"],ok:2,why:"doesn't + forma base: doesn't watch."}
+ ]},
+ p5:{title:"Parte 5 · Preguntas y respuestas (18 pts)",items:[
+  {q:"______ you get up early? &rarr; Yes, I do.",opts:["Do","Does","Are"],ok:0,why:"Pregunta con you: Do."},
+  {q:"______ do you start work? &rarr; At 7:00 a.m.",opts:["When","What time","Do"],ok:1,why:"La respuesta es una hora exacta: What time."},
+  {q:"______ do you visit Tayrona? &rarr; On Fridays.",opts:["What time","Do","When"],ok:2,why:"La respuesta es un día: When."},
+  {q:"Do you work on Sundays? &rarr; No, I ______.",opts:["don't","doesn't","not"],ok:0,why:"Respuesta corta con I: No, I don't."},
+  {q:"El orden correcto es:",opts:["Time what you do have lunch?","What time do you have lunch?","What time you do have lunch?"],ok:1,why:"Palabra de pregunta + do + you + verbo."},
+  {q:"What time do you finish work? &rarr;",opts:["At 5:00 p.m.","Yes, I do.","In Santa Marta."],ok:0,why:"What time…? pide una hora exacta."},
+  {q:"Do you have breakfast at home? &rarr;",opts:["At 8:00.","Yes, I do.","On Mondays."],ok:1,why:"Do you…? pide sí o no: Yes, I do."},
+  {q:"Corrige la pregunta: ✘ When you do study English?",opts:["When do you study English?","When you study English?","When study do you English?"],ok:0,why:"El orden fijo es When + do + you + verbo."},
+  {q:"Daniel responde: 'I get up at 5:30.' ¿Cuál fue la pregunta?",opts:["Do you get up?","What time do you get up?","When do you lunch?"],ok:1,why:"La respuesta es una hora exacta, entonces la pregunta fue What time…?"}
+ ]}
+};
+const EVAL_MAX=[8,8,8,8,18];
+
+function s19(){
+  if(S.evalDone){
+    app.innerHTML=`<div class="card"><span class="eyebrow">Evaluación final</span>
+    <h1>Ya completaste la evaluación</h1>
+    <p>Tu puntaje quedó registrado: <strong>${S.evalScore} / 50</strong>.</p>
+    ${navRow(true,"Ver resultados")}</div>`;
+    bindNav();gate("nextBtn",true);return;
+  }
+  const parts=["p1","p2","p3","p4","p5"];
+  let html=`<div class="card"><span class="eyebrow">Evaluación final · 50 puntos</span>
+  <h1>La prueba de Caribe Vivo, ${esc(S.name.split(" ")[0]||"estudiante")}</h1>
+  <p class="es">Valentina evalúa a todo su equipo. Son 25 preguntas de 2 puntos cada una. La Parte 5 (preguntas y respuestas) es la más importante: vale 18 puntos. Solo puedes calificar <strong>una vez</strong>, revisa bien antes de enviar.</p>`;
+  parts.forEach((pk,pi)=>{
+    const p=EVAL[pk];
+    html+=`<div class="evalpart"><h3>${p.title}</h3>`;
+    p.items.forEach((it,ii)=>{
+      html+=`<div class="eitem">
+        <label for="e${pi}_${ii}"><span class="en">${it.q}</span></label><br>
+        <select id="e${pi}_${ii}" data-p="${pi}" data-i="${ii}">
+          <option value="-1">Selecciona…</option>
+          ${it.opts.map((o,oi)=>`<option value="${oi}">${esc(o)}</option>`).join("")}
+        </select>
+        <div class="itemfb" id="f${pi}_${ii}" aria-live="polite"></div>
+      </div>`;
+    });
+    html+=`</div>`;
+  });
+  html+=`<div class="fb" id="evfb" aria-live="polite"></div>
+  <button class="btn gold" id="gradeBtn" disabled>Calificar mi evaluación</button>
+  <div class="navrow" style="margin-top:14px"><button class="btn ghost" id="prevBtn">&larr; Atrás</button>
+  <button class="btn" id="nextBtn" disabled>Ver resultados &rarr;</button></div></div>`;
+  app.innerHTML=html;
+  bindNav();
+  const sels=Array.from(app.querySelectorAll("select"));
+  function ready(){gate("gradeBtn",sels.every(s=>s.value!=="-1"));}
+  sels.forEach(s=>s.addEventListener("change",ready));ready();
+  document.getElementById("gradeBtn").addEventListener("click",()=>{
+    let total=0;const per=[0,0,0,0,0];
+    const parts2=["p1","p2","p3","p4","p5"];
+    sels.forEach(sel=>{
+      const pi=Number(sel.dataset.p),ii=Number(sel.dataset.i);
+      const it=EVAL[parts2[pi]].items[ii];
+      const f=document.getElementById("f"+pi+"_"+ii);
+      const good=Number(sel.value)===it.ok;
+      sel.disabled=true;sel.classList.add(good?"right":"wrong");
+      f.className="itemfb "+(good?"ok":"bad");
+      f.textContent=(good?"✔ Correcto. ":"✘ La respuesta era: "+it.opts[it.ok]+". ")+it.why;
+      if(good){total+=2;per[pi]+=2;}
+    });
+    S.evalDone=true;S.evalScore=total;S.evalParts=per;save();
+    const ev=document.getElementById("evfb");
+    fb(ev,true,`Evaluación calificada: ${total} / 50 puntos. Revisa la retroalimentación de cada punto y pasa a tus resultados.`);
+    if(total>=40)sWIN();else sOK();
+    document.getElementById("gradeBtn").disabled=true;
+    gate("nextBtn",true);
+    try{ev.scrollIntoView({behavior:"smooth"});}catch(e){}
+  });
+}
+
+/* 20 · Resultados + PNG + recordatorio de tarea */
+function s20(){
+  const t=S.evalScore,names=["Vocabulario","La hora","Afirmativo","Negativo","Preguntas y respuestas"];
+  const msg=t>=45?"¡Sobresaliente! Outstanding!":t>=35?"¡Muy buen trabajo! Great job!":t>=25?"Buen esfuerzo. Repasa los capítulos con menos puntos.":"Vuelve a repasar los capítulos y consulta a tu docente.";
+  const hasRoutine=Array.isArray(S.routine)&&S.routine.length===8&&S.routine.every(r=>typeof r==="string"&&r.trim().length>0);
+  const sent=r=>r.trim().replace(/\s+/g," ");
+  app.innerHTML=`
+  <div class="card scorebox">
+    <span class="eyebrow">Resultados</span>
+    <h1>${esc(S.name)}</h1>
+    <div class="big">${t} / 50</div>
+    <span class="badge">${esc(msg)}</span>
+    <table class="breakdown"><tr><th>Parte</th><th>Puntaje</th></tr>
+    ${names.map((n,i)=>`<tr><td>${n}</td><td>${S.evalParts[i]} / ${EVAL_MAX[i]}</td></tr>`).join("")}
+    </table>
+    ${hasRoutine?`<h3 style="text-align:left">Tus 8 oraciones</h3>
+    <div class="mytext" style="text-align:left">${S.routine.map((r,i)=>(i+1)+". "+esc(sent(r))).join("<br>")}</div>`:""}
+    <div class="note hw" style="text-align:left"><span role="img" aria-label="cuaderno">📝</span> <strong>No olvides tu tarea:</strong> lleva a la próxima clase tus <strong>8 oraciones escritas a mano y practicadas en voz alta</strong>. Las vamos a usar en una actividad de preguntas en parejas.</div>
+    <div class="note" style="text-align:left"><strong>Entrega en Campus Virtual:</strong> descarga tu imagen de resultados (PNG) y súbela en la actividad correspondiente. Esa imagen es tu evidencia de participación y nota.</div>
+    <button class="btn gold" id="pngBtn"><span role="img" aria-label="descarga">⬇️</span> Descargar mi resultado (PNG)</button>
+    <button class="btn ghost" id="resetBtn" style="margin-left:8px">Reiniciar el OVA</button>
+    <canvas id="cv" width="1000" height="700" style="display:none"></canvas>
+  </div>`;
+  document.getElementById("pngBtn").addEventListener("click",()=>{
+    const c=document.getElementById("cv"),x=c.getContext("2d");
+    x.fillStyle="#10294a";x.fillRect(0,0,1000,700);
+    x.strokeStyle="#d9a441";x.lineWidth=10;x.strokeRect(18,18,964,664);
+    x.fillStyle="#d9a441";x.font="bold 26px Georgia, serif";
+    x.fillText("UNIVERSIDAD DEL MAGDALENA · PROGRAMA CREO",60,80);
+    x.fillStyle="#ffffff";x.font="bold 38px Georgia, serif";
+    x.fillText("OVA · Daily Routines & Telling the Time",60,138);
+    x.font="26px Georgia, serif";x.fillStyle="#f2c979";
+    x.fillText("English A1 · La historia de Valentina, líder de turismo",60,176);
+    x.fillStyle="#ffffff";x.font="bold 32px Georgia, serif";
+    x.fillText("Estudiante: "+S.name,60,240);
+    const d=new Date();
+    x.font="24px Georgia, serif";
+    x.fillText("Fecha: "+d.toLocaleDateString("es-CO",{weekday:"long",year:"numeric",month:"long",day:"numeric"}),60,282);
+    x.fillStyle="#d9a441";x.font="bold 80px Georgia, serif";
+    x.fillText(t+" / 50",60,386);
+    x.fillStyle="#ffffff";x.font="23px Georgia, serif";
+    names.forEach((n,i)=>{x.fillText(n+": "+S.evalParts[i]+" / "+EVAL_MAX[i],60,436+i*32);});
+    x.fillStyle="#8fd3a8";x.font="bold 22px Georgia, serif";
+    x.fillText("Tarea: llevar mis 8 oraciones escritas a mano y practicadas.",60,630);
+    x.fillStyle="#8ea6c8";x.font="17px Georgia, serif";
+    x.fillText("Evidencia generada por el OVA · Entregar en Campus Virtual",520,668);
+    const a=document.createElement("a");
+    a.download="resultado_rutinas_"+S.name.replace(/\s+/g,"_")+".png";
+    a.href=c.toDataURL("image/png");a.click();sWIN();
+  });
+  document.getElementById("resetBtn").addEventListener("click",()=>{
+    if(confirm("¿Seguro? Se borrará todo tu progreso, tus 8 oraciones y tu puntaje en este navegador.")){
+      localStorage.removeItem(KEY);location.reload();
+    }
+  });
+}
+
+const SCREENS=[s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20];
+const homeBtn=document.getElementById("homeBtn"),backBtn=document.getElementById("backBtn"),fwdBtn=document.getElementById("fwdBtn");
+homeBtn.addEventListener("click",()=>goto(0));
+backBtn.addEventListener("click",()=>goto(S.screen-1));
+fwdBtn.addEventListener("click",()=>{if(S.screen<(S.maxScreen||0))goto(S.screen+1);});
+function render(){
+  S.maxScreen=Math.max(S.maxScreen||0,S.screen);
+  document.getElementById("pbar").style.width=Math.round(S.screen/(SCREENS.length-1)*100)+"%";
+  backBtn.disabled=S.screen<=0;
+  fwdBtn.disabled=S.screen>=(S.maxScreen||0);
+  homeBtn.disabled=S.screen===0;
+  SCREENS[S.screen]();
+}
+
+/* Controles de la barra superior */
+const slowBtn=document.getElementById("slowBtn"),muteBtn=document.getElementById("muteBtn");
+function paintCtl(){
+  slowBtn.setAttribute("aria-pressed",S.slow?"true":"false");
+  muteBtn.setAttribute("aria-pressed",S.mute?"true":"false");
+  document.getElementById("muteIco").textContent=S.mute?"🔇":"🔊";
+}
+slowBtn.addEventListener("click",()=>{S.slow=!S.slow;save();paintCtl();});
+muteBtn.addEventListener("click",()=>{S.mute=!S.mute;save();paintCtl();if(S.mute)try{window.speechSynthesis.cancel();}catch(e){}});
+paintCtl();
+render();
+</script>
+</body>
+</html>
